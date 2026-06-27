@@ -728,6 +728,149 @@
     font-size: 1.1rem;
   }
 
+  /* ── TEST ── */
+  #test { background: linear-gradient(135deg, #fff5f5 0%, #f0faf9 100%); }
+
+  .test-wrapper {
+    max-width: 720px;
+    margin: 0 auto;
+  }
+
+  .test-progress-bar {
+    height: 6px;
+    background: #EEE;
+    border-radius: 50px;
+    margin-bottom: 2.5rem;
+    overflow: hidden;
+  }
+  .test-progress-fill {
+    height: 100%;
+    background: linear-gradient(90deg, var(--coral), var(--teal));
+    border-radius: 50px;
+    transition: width 0.4s ease;
+  }
+
+  .test-step { display: none; }
+  .test-step.active { display: block; animation: fadeIn 0.3s ease; }
+
+  @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+
+  .test-q-num {
+    font-size: 0.8rem;
+    font-weight: 800;
+    color: var(--coral);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 0.5rem;
+  }
+
+  .test-q-text {
+    font-size: 1.35rem;
+    font-weight: 900;
+    margin-bottom: 1.75rem;
+    line-height: 1.3;
+    color: var(--charcoal);
+  }
+
+  .test-options { display: flex; flex-direction: column; gap: 0.85rem; }
+
+  .test-option {
+    background: #fff;
+    border: 2px solid #EEE;
+    border-radius: 16px;
+    padding: 1rem 1.25rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    cursor: pointer;
+    transition: border-color 0.2s, background 0.2s, transform 0.15s;
+    font-weight: 700;
+    font-size: 0.95rem;
+    color: var(--charcoal);
+    text-align: left;
+    width: 100%;
+    font-family: 'Nunito', sans-serif;
+  }
+  .test-option:hover { border-color: var(--coral); background: #fff5f5; transform: translateX(4px); }
+  .test-option.selected { border-color: var(--teal); background: rgba(46,196,182,0.08); }
+
+  .test-opt-icon {
+    width: 42px; height: 42px;
+    border-radius: 12px;
+    background: rgba(255,107,107,0.1);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 1.3rem;
+    flex-shrink: 0;
+  }
+
+  .test-nav { display: flex; justify-content: space-between; align-items: center; margin-top: 2rem; }
+  .test-step-counter { font-size: 0.85rem; color: var(--muted); font-weight: 700; }
+
+  .btn-test-next {
+    background: var(--coral);
+    color: #fff;
+    border: none;
+    padding: 0.85rem 2rem;
+    border-radius: 50px;
+    font-weight: 800;
+    font-size: 0.95rem;
+    cursor: pointer;
+    font-family: 'Nunito', sans-serif;
+    transition: background 0.2s, transform 0.2s;
+    box-shadow: 0 4px 16px rgba(255,107,107,0.3);
+  }
+  .btn-test-next:hover { background: #e05555; transform: scale(1.03); }
+  .btn-test-next:disabled { background: #CCC; box-shadow: none; cursor: not-allowed; transform: none; }
+
+  /* Result */
+  #test-result { display: none; animation: fadeIn 0.4s ease; text-align: center; }
+
+  .result-icon { font-size: 5rem; margin-bottom: 1rem; }
+  .result-profile {
+    font-size: 1.8rem;
+    font-weight: 900;
+    color: var(--coral);
+    margin-bottom: 0.5rem;
+  }
+  .result-subtitle { font-size: 1rem; color: var(--muted); font-family: 'Lora', serif; font-style: italic; margin-bottom: 1.5rem; }
+  .result-desc {
+    background: #fff;
+    border-radius: 20px;
+    padding: 1.5rem;
+    font-size: 0.95rem;
+    line-height: 1.7;
+    color: var(--charcoal);
+    margin-bottom: 1.5rem;
+    border-left: 4px solid var(--coral);
+    text-align: left;
+  }
+
+  .result-services {
+    display: flex; gap: 0.75rem; flex-wrap: wrap; justify-content: center; margin-bottom: 2rem;
+  }
+  .result-service-chip {
+    background: rgba(46,196,182,0.12);
+    color: var(--teal-dark);
+    border-radius: 50px;
+    padding: 0.45rem 1rem;
+    font-weight: 800;
+    font-size: 0.85rem;
+  }
+
+  .btn-retest {
+    background: transparent;
+    border: 2px solid var(--coral);
+    color: var(--coral);
+    padding: 0.75rem 1.75rem;
+    border-radius: 50px;
+    font-weight: 800;
+    font-size: 0.9rem;
+    cursor: pointer;
+    font-family: 'Nunito', sans-serif;
+    transition: background 0.2s, color 0.2s;
+  }
+  .btn-retest:hover { background: var(--coral); color: #fff; }
+
   /* ── FOOTER ── */
   footer {
     background: #1A1A1A;
@@ -776,6 +919,7 @@
     <li><a href="#quienes">Nosotros</a></li>
     <li><a href="#servicios">Servicios</a></li>
     <li><a href="#tienda">Planes</a></li>
+    <li><a href="#test">Test</a></li>
     <li><a href="#faq">FAQ</a></li>
     <li><a href="#contacto">Contacto</a></li>
     <li><a href="#tienda" class="nav-cta">Comenzar</a></li>
@@ -1008,6 +1152,185 @@
   </div>
 </section>
 
+<!-- TEST DE CUIDADOR -->
+<section id="test">
+  <div class="pill" style="display:block;text-align:center;">Descúbrete</div>
+  <h2 class="section-title">🐾 Test del Cuidador</h2>
+  <p class="section-sub">10 preguntas para descubrir qué tipo de cuidador eres y qué necesitas.</p>
+
+  <div class="test-wrapper">
+    <div class="test-progress-bar"><div class="test-progress-fill" id="test-progress" style="width:10%"></div></div>
+
+    <div id="test-questions">
+
+      <!-- P1 -->
+      <div class="test-step active" data-q="1">
+        <div class="test-q-num">Pregunta 1 de 10</div>
+        <div class="test-q-text">¿Cuánto tiempo le dedicas a tu mascota al día?</div>
+        <div class="test-options">
+          <button class="test-option" onclick="selectOption(this, 3)"><div class="test-opt-icon">⏰</div>Más de 3 horas, siempre estoy con ella</button>
+          <button class="test-option" onclick="selectOption(this, 2)"><div class="test-opt-icon">🕐</div>Entre 1 y 3 horas</button>
+          <button class="test-option" onclick="selectOption(this, 1)"><div class="test-opt-icon">📱</div>Menos de 1 hora, el trabajo me absorbe</button>
+          <button class="test-option" onclick="selectOption(this, 0)"><div class="test-opt-icon">😔</div>Casi nada últimamente</button>
+        </div>
+        <div class="test-nav">
+          <span class="test-step-counter">1 / 10</span>
+          <button class="btn-test-next" onclick="nextStep()" disabled id="btn-next-1">Siguiente →</button>
+        </div>
+      </div>
+
+      <!-- P2 -->
+      <div class="test-step" data-q="2">
+        <div class="test-q-num">Pregunta 2 de 10</div>
+        <div class="test-q-text">¿Con qué frecuencia llevas a tu mascota al veterinario?</div>
+        <div class="test-options">
+          <button class="test-option" onclick="selectOption(this, 3)"><div class="test-opt-icon">🏥</div>Controles regulares + vacunas al día</button>
+          <button class="test-option" onclick="selectOption(this, 2)"><div class="test-opt-icon">💊</div>Solo cuando está enferma</button>
+          <button class="test-option" onclick="selectOption(this, 1)"><div class="test-opt-icon">💸</div>Quiero ir más, pero es costoso</button>
+          <button class="test-option" onclick="selectOption(this, 0)"><div class="test-opt-icon">😟</div>Hace mucho que no la llevo</button>
+        </div>
+        <div class="test-nav">
+          <span class="test-step-counter">2 / 10</span>
+          <button class="btn-test-next" onclick="nextStep()" disabled>Siguiente →</button>
+        </div>
+      </div>
+
+      <!-- P3 -->
+      <div class="test-step" data-q="3">
+        <div class="test-q-num">Pregunta 3 de 10</div>
+        <div class="test-q-text">¿Cómo describirías tu vínculo emocional con tu mascota?</div>
+        <div class="test-options">
+          <button class="test-option" onclick="selectOption(this, 3)"><div class="test-opt-icon">❤️</div>Es mi familia, la quiero profundamente</button>
+          <button class="test-option" onclick="selectOption(this, 2)"><div class="test-opt-icon">😊</div>La quiero mucho, aunque a veces me agota</button>
+          <button class="test-option" onclick="selectOption(this, 1)"><div class="test-opt-icon">😐</div>Ha sido difícil últimamente conectar</button>
+          <button class="test-option" onclick="selectOption(this, 0)"><div class="test-opt-icon">😢</div>Me siento sobrepasado/a y agotado/a</button>
+        </div>
+        <div class="test-nav">
+          <span class="test-step-counter">3 / 10</span>
+          <button class="btn-test-next" onclick="nextStep()" disabled>Siguiente →</button>
+        </div>
+      </div>
+
+      <!-- P4 -->
+      <div class="test-step" data-q="4">
+        <div class="test-q-num">Pregunta 4 de 10</div>
+        <div class="test-q-text">¿Tu mascota hace ejercicio o actividad física regularmente?</div>
+        <div class="test-options">
+          <button class="test-option" onclick="selectOption(this, 3)"><div class="test-opt-icon">🏃</div>Sí, salidas diarias y juego en casa</button>
+          <button class="test-option" onclick="selectOption(this, 2)"><div class="test-opt-icon">🌿</div>Algunos días, intento que salga</button>
+          <button class="test-option" onclick="selectOption(this, 1)"><div class="test-opt-icon">🛋️</div>Poco, no siempre tengo tiempo</button>
+          <button class="test-option" onclick="selectOption(this, 0)"><div class="test-opt-icon">😞</div>Casi nada, me da culpa</button>
+        </div>
+        <div class="test-nav">
+          <span class="test-step-counter">4 / 10</span>
+          <button class="btn-test-next" onclick="nextStep()" disabled>Siguiente →</button>
+        </div>
+      </div>
+
+      <!-- P5 -->
+      <div class="test-step" data-q="5">
+        <div class="test-q-num">Pregunta 5 de 10</div>
+        <div class="test-q-text">¿Has pensado alguna vez en dar a tu mascota en adopción?</div>
+        <div class="test-options">
+          <button class="test-option" onclick="selectOption(this, 3)"><div class="test-opt-icon">🚫</div>Jamás, es para siempre</button>
+          <button class="test-option" onclick="selectOption(this, 2)"><div class="test-opt-icon">🤔</div>Lo pensé en un momento difícil, pero lo superé</button>
+          <button class="test-option" onclick="selectOption(this, 1)"><div class="test-opt-icon">😰</div>Lo he pensado últimamente por situaciones de vida</button>
+          <button class="test-option" onclick="selectOption(this, 0)"><div class="test-opt-icon">💔</div>Sí, creo que no puedo seguir cuidándola</button>
+        </div>
+        <div class="test-nav">
+          <span class="test-step-counter">5 / 10</span>
+          <button class="btn-test-next" onclick="nextStep()" disabled>Siguiente →</button>
+        </div>
+      </div>
+
+      <!-- P6 -->
+      <div class="test-step" data-q="6">
+        <div class="test-q-num">Pregunta 6 de 10</div>
+        <div class="test-q-text">¿Cómo manejas los gastos asociados a tu mascota?</div>
+        <div class="test-options">
+          <button class="test-option" onclick="selectOption(this, 3)"><div class="test-opt-icon">💰</div>Tengo presupuesto asignado y lo cubro bien</button>
+          <button class="test-option" onclick="selectOption(this, 2)"><div class="test-opt-icon">📊</div>Me ajusto, pero lo logro</button>
+          <button class="test-option" onclick="selectOption(this, 1)"><div class="test-opt-icon">😬</div>A veces es difícil, me genera estrés económico</button>
+          <button class="test-option" onclick="selectOption(this, 0)"><div class="test-opt-icon">🆘</div>No puedo cubrirlos, necesito ayuda</button>
+        </div>
+        <div class="test-nav">
+          <span class="test-step-counter">6 / 10</span>
+          <button class="btn-test-next" onclick="nextStep()" disabled>Siguiente →</button>
+        </div>
+      </div>
+
+      <!-- P7 -->
+      <div class="test-step" data-q="7">
+        <div class="test-q-num">Pregunta 7 de 10</div>
+        <div class="test-q-text">¿Tienes a alguien que te ayude cuando no puedes cuidar a tu mascota?</div>
+        <div class="test-options">
+          <button class="test-option" onclick="selectOption(this, 3)"><div class="test-opt-icon">👨‍👩‍👧</div>Sí, familia o amigos de confianza</button>
+          <button class="test-option" onclick="selectOption(this, 2)"><div class="test-opt-icon">🏠</div>Contrato servicios de cuidado</button>
+          <button class="test-option" onclick="selectOption(this, 1)"><div class="test-opt-icon">😅</div>A veces encuentro a alguien, no siempre</button>
+          <button class="test-option" onclick="selectOption(this, 0)"><div class="test-opt-icon">😓</div>No tengo a nadie, es todo yo solo/a</button>
+        </div>
+        <div class="test-nav">
+          <span class="test-step-counter">7 / 10</span>
+          <button class="btn-test-next" onclick="nextStep()" disabled>Siguiente →</button>
+        </div>
+      </div>
+
+      <!-- P8 -->
+      <div class="test-step" data-q="8">
+        <div class="test-q-num">Pregunta 8 de 10</div>
+        <div class="test-q-text">¿Qué tipo de mascota tienes?</div>
+        <div class="test-options">
+          <button class="test-option" onclick="selectOption(this, 2)"><div class="test-opt-icon">🐕</div>Perro</button>
+          <button class="test-option" onclick="selectOption(this, 2)"><div class="test-opt-icon">🐈</div>Gato</button>
+          <button class="test-option" onclick="selectOption(this, 2)"><div class="test-opt-icon">🐾</div>Otra (conejo, ave, reptil, etc.)</button>
+          <button class="test-option" onclick="selectOption(this, 1)"><div class="test-opt-icon">🏠</div>Aún no tengo, estoy pensando en adoptar</button>
+        </div>
+        <div class="test-nav">
+          <span class="test-step-counter">8 / 10</span>
+          <button class="btn-test-next" onclick="nextStep()" disabled>Siguiente →</button>
+        </div>
+      </div>
+
+      <!-- P9 -->
+      <div class="test-step" data-q="9">
+        <div class="test-q-num">Pregunta 9 de 10</div>
+        <div class="test-q-text">¿Cómo te sientes emocionalmente al cuidar a tu mascota?</div>
+        <div class="test-options">
+          <button class="test-option" onclick="selectOption(this, 3)"><div class="test-opt-icon">🌟</div>Me da alegría y me hace bien</button>
+          <button class="test-option" onclick="selectOption(this, 2)"><div class="test-opt-icon">😌</div>Bien en general, aunque cansado/a a veces</button>
+          <button class="test-option" onclick="selectOption(this, 1)"><div class="test-opt-icon">😩</div>Estresado/a, siento que no doy abasto</button>
+          <button class="test-option" onclick="selectOption(this, 0)"><div class="test-opt-icon">🆘</div>Agotado/a, necesito apoyo urgente</button>
+        </div>
+        <div class="test-nav">
+          <span class="test-step-counter">9 / 10</span>
+          <button class="btn-test-next" onclick="nextStep()" disabled>Siguiente →</button>
+        </div>
+      </div>
+
+      <!-- P10 -->
+      <div class="test-step" data-q="10">
+        <div class="test-q-num">Pregunta 10 de 10</div>
+        <div class="test-q-text">¿Qué es lo que más necesitas ahora como cuidador/a?</div>
+        <div class="test-options">
+          <button class="test-option" onclick="selectOption(this, 3)"><div class="test-opt-icon">🌐</div>Conectar con otros cuidadores</button>
+          <button class="test-option" onclick="selectOption(this, 2)"><div class="test-opt-icon">✂️</div>Acceder a servicios de calidad</button>
+          <button class="test-option" onclick="selectOption(this, 1)"><div class="test-opt-icon">💪</div>Rutinas y consejos de cuidado</button>
+          <button class="test-option" onclick="selectOption(this, 0)"><div class="test-opt-icon">🤝</div>Apoyo emocional y contención</button>
+        </div>
+        <div class="test-nav">
+          <span class="test-step-counter">10 / 10</span>
+          <button class="btn-test-next" onclick="showResult()" disabled>Ver mi perfil 🐾</button>
+        </div>
+      </div>
+
+    </div><!-- end test-questions -->
+
+    <!-- RESULTADO -->
+    <div id="test-result"></div>
+
+  </div>
+</section>
+
 <!-- FAQ -->
 <section id="faq">
   <div class="pill" style="display:block;text-align:center;">Preguntas frecuentes</div>
@@ -1235,6 +1558,97 @@
     document.getElementById('contact-form').style.display = 'none';
     document.getElementById('form-success').style.display = 'block';
     showToast('✉️ Mensaje enviado con éxito');
+  }
+
+  // ── TEST ──
+  let currentStep = 1;
+  const totalSteps = 10;
+  let scores = [];
+
+  function selectOption(btn, score) {
+    const step = btn.closest('.test-step');
+    step.querySelectorAll('.test-option').forEach(b => b.classList.remove('selected'));
+    btn.classList.add('selected');
+    step.querySelector('.btn-test-next').disabled = false;
+    // store score for this step
+    scores[currentStep - 1] = score;
+  }
+
+  function nextStep() {
+    const current = document.querySelector('.test-step.active');
+    if (!current) return;
+    current.classList.remove('active');
+    currentStep++;
+    const next = document.querySelector(`.test-step[data-q="${currentStep}"]`);
+    if (next) {
+      next.classList.add('active');
+      const pct = (currentStep / totalSteps) * 100;
+      document.getElementById('test-progress').style.width = pct + '%';
+    }
+  }
+
+  function showResult() {
+    document.getElementById('test-questions').style.display = 'none';
+    document.getElementById('test-progress').style.width = '100%';
+
+    const total = scores.reduce((a, b) => (a || 0) + (b || 0), 0);
+    const max = totalSteps * 3;
+    const pct = (total / max) * 100;
+
+    let profile, icon, subtitle, desc, services;
+
+    if (pct >= 80) {
+      profile = '🏆 Cuidador Estrella';
+      icon = '🌟';
+      subtitle = 'Tu mascota tiene todo el amor y cuidado que merece.';
+      desc = 'Eres un cuidador/a ejemplar. Tienes un vínculo profundo con tu mascota, cubres sus necesidades de salud, ejercicio y afecto de forma consistente. PetsPlay es el lugar perfecto para compartir tu experiencia y ayudar a otros cuidadores a llegar a tu nivel.';
+      services = ['📸 Comparte en la comunidad', '🏠 Apoya adopciones', '⭐ Reseña servicios'];
+    } else if (pct >= 60) {
+      profile = '💛 Cuidador Comprometido';
+      icon = '💪';
+      subtitle = 'Tienes muy buena base, con pequeños ajustes lo darás todo.';
+      desc = 'Quieres a tu mascota y haces un gran esfuerzo por cuidarla bien. A veces el tiempo o los recursos te juegan en contra, pero tu compromiso es claro. PetsPlay puede ayudarte a organizarte mejor, acceder a servicios accesibles y conectar con una comunidad que entiende tu realidad.';
+      services = ['✂️ Peluquerías cercanas', '💪 Rutinas de ejercicio', '🤝 Grupos de apoyo'];
+    } else if (pct >= 35) {
+      profile = '🧡 Cuidador en Proceso';
+      icon = '🌱';
+      subtitle = 'Estás pasando un momento difícil, pero no estás solo/a.';
+      desc = 'Cuidar una mascota puede ser agotador, especialmente si no tienes apoyo. Lo importante es que reconoces la situación y buscas mejorarla. En PetsPlay encontrarás grupos de contención, recursos de bajo costo y una comunidad que puede acompañarte para que ni tú ni tu mascota queden solos.';
+      services = ['🤝 Grupos de apoyo', '📋 Asesoría gratuita', '💸 Servicios accesibles'];
+    } else {
+      profile = '🆘 Cuidador que necesita apoyo urgente';
+      icon = '💙';
+      subtitle = 'Pedir ayuda es el acto más valiente de un cuidador.';
+      desc = 'Estás en un momento muy difícil y es completamente válido sentirse así. En PetsPlay creemos que nadie debe llegar al punto de abandonar a su mascota por falta de ayuda. Tenemos grupos de apoyo, rescatistas y recursos disponibles para acompañarte. Escríbenos, no estás solo/a.';
+      services = ['🆘 Apoyo de emergencia', '🏠 Red de rescatistas', '💬 Habla con alguien'];
+    }
+
+    document.getElementById('test-result').innerHTML = `
+      <div class="result-icon">${icon}</div>
+      <div class="result-profile">${profile}</div>
+      <div class="result-subtitle">${subtitle}</div>
+      <div class="result-desc">${desc}</div>
+      <div class="result-services">
+        ${services.map(s => `<div class="result-service-chip">${s}</div>`).join('')}
+      </div>
+      <div style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;">
+        <button class="btn-retest" onclick="resetTest()">🔄 Repetir test</button>
+        <a href="#contacto" class="btn-primary" style="text-decoration:none;padding:0.75rem 1.75rem;">Hablar con PetsPlay →</a>
+      </div>
+    `;
+    document.getElementById('test-result').style.display = 'block';
+  }
+
+  function resetTest() {
+    currentStep = 1;
+    scores = [];
+    document.querySelectorAll('.test-step').forEach(s => s.classList.remove('active'));
+    document.querySelectorAll('.test-option').forEach(b => b.classList.remove('selected'));
+    document.querySelectorAll('.btn-test-next').forEach(b => b.disabled = true);
+    document.querySelector('.test-step[data-q="1"]').classList.add('active');
+    document.getElementById('test-progress').style.width = '10%';
+    document.getElementById('test-result').style.display = 'none';
+    document.getElementById('test-questions').style.display = 'block';
   }
 
   // ── TOAST ──
